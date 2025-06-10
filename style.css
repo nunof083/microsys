@@ -1,0 +1,231 @@
+/* Dark Theme */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+header {
+    background: #1f1f1f;
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 2px solid #333;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #9a42ff;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 2rem;
+    color: #9a42ff;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    font-size: 2rem;
+}
+
+section {
+    padding: 1rem 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.cards {
+    --border-angle: 0deg;
+    --bg: #1e1e1e;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.card {
+    padding: 1rem;
+    border-radius: 10px;
+    flex: 1 1 250px;
+    transition: transform 0.2s;
+    box-shadow: 0px 2px 4px hsl(0 0% 0% / 25%);
+    animation: border-angle-rotate 2s infinite linear;
+    border: 0.3rem solid transparent;
+    position: relative;
+    background: linear-gradient(#1e1e1e, #302d2d) padding-box,
+    conic-gradient(from var(--border-angle), var(--bg) 50%, #9a42ff) border-box;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+a {
+    color: #9a42ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.slide img {
+    width: 400px;
+    height: auto;
+    display: block;
+    margin: 0.5rem auto;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #1f1f1f;
+    border-top: 2px solid #333;
+    margin-top: 2rem;
+}
+
+::selection {
+    background: #9a42ff;
+    color: #FFFFFF;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+    margin: 20px 0;
+}
+
+.image-container img {
+    max-width: 300px;         /* Limite raisonnable par image */
+    width: 100%;              /* Prend toute la largeur de son conteneur (jusqu'au max-width) */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    object-fit: contain;      /* Garde le ratio sans rognage */
+    image-rendering: auto;    /* Utilise le rendu optimal selon le navigateur */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #444;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+}
+
+@keyframes border-angle-rotate {
+    from { --border-angle: 0deg; }
+    to { --border-angle: 360deg; }
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* Modal styles */
+.modal-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 1000px;
+  width: 95%;
+  height: 95vh;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+        text-align: center;
+        font-size: 3rem;
+    }
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+}
+
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 5rem;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+}
+
+.nav-btn.left {
+    left: 10px;
+}
+
+.nav-btn.right {
+    right: 10px;
+}
+
+.present-btn {
+    display: inline-block;
+    background: #9a42ff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 1rem;
+    font-size: 1.2rem;
+}

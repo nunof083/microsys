@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borne d'arcade connectée</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Borne d’arcade connectée – Projet système embarqué & réseau</h1>
+  </header>
+  <section>
+    <h2>👤 Présentation du Projet</h2>
+    <div class="present-btn" onclick="document.getElementById('modal').style.display='flex'">📽️ Présentation</div>
+  </section>
+
+  <div class="modal-bg" id="modal">
+    <div class="modal">
+      <div class="nav-btn left" onclick="changeSlide(-1)">&#10094;</div>
+      <div class="nav-btn right" onclick="changeSlide(1)">&#10095;</div>
+
+      <div class="slide active">
+        <h2>Borne d'arcade - Système Embarqué</h2>
+        <img src="img/arcade.png" alt="Photo de Borne d'arcade">
+      </div>
+      <div class="slide center-vertical">
+        <h2>Pourquoi une borne d'arcade ?</h2>
+      </div>
+      <div class="slide">
+        <h2>Démonstration rapide</h2>
+        <p>SFTP + Script Mail + Manettes</p>
+      </div>
+      <div class="slide">
+        <h2>De quoi est-elle composé ?</h2>
+        <div class="image-container">
+          <img src="img/manettes.png">
+          <img src="img/mini_pc.jpg">
+          <img src="img/arduino_leonardo.jpg">
+          <img src="img/enceinte.jpg">
+          <img src="img/ecran.jpg">
+        </div>
+      </div>
+      <div class="slide">
+        <h2>Fabrication du boîtier</h2>
+        <div class="image-container">
+          <img src="img/boite1.png">
+          <img src="img/boite2.jpg">
+          <img src="img/boite3.jpg">
+          <img src="img/boite4.jpg">
+          <img src="img/boite5.jpg">
+          <img src="img/boite6.jpg">
+          <img src="img/boite7.jpg">
+          <img src="img/boite8.jpg">
+        </div>
+      </div>
+      <div class="slide">
+        <h2>Finalisation du boîtier</h2>
+        <div class="image-container">
+          <img src="img/boite9.jpg">
+          <img src="img/boite10.jpg">
+        </div>
+      </div>
+      <div class="slide">
+        <h2>Partie réseaux</h2>
+        <p>Présentation de l'architecture réseau, du VPN, de l'accès SFTP, et du monitoring des sessions.</p>
+      </div>
+      <div class="slide">
+        <h2>Conclusion et questions</h2>
+        <p>Merci pour votre attention ! Je suis à votre disposition pour vos questions.</p>
+      </div>
+    </div>
+  </div>
+  <section>
+    <h2>🎯 Objectif du projet</h2>
+    <p>Créer une borne d’arcade autonome, connectée et évolutive basée sur Batocera Linux, intégrant du matériel Arduino, des fonctionnalités réseau et un monitoring distant.</p>
+
+    <h2>🧩 Composants matériels</h2>
+    <table>
+      <tr><th>Élément</th><th>Description</th></tr>
+      <tr><td>Mini PC</td><td>Intel N150, 16 Go RAM, SSD 512 Go</td></tr>
+      <tr><td>Manettes</td><td>2 x Arduino Leonardo (HID) avec joystick + 6 boutons</td></tr>
+      <tr><td>Lumières</td><td>LED WS2811 pilotables via Arduino</td></tr>
+      <tr><td>Monnayeur</td><td>Compatible signal GPIO</td></tr>
+      <tr><td>Écran</td><td>HDMI ou VGA</td></tr>
+    </table>
+
+    <div class="image-container">
+      <!-- <img src="images/joystick.jpg" alt="Joysticks Arduino">
+      <img src="images/leds.jpg" alt="LEDs WS2811">
+      <img src="images/interface.jpg" alt="Interface Batocera"> -->
+    </div>
+
+    <h2>📡 Connectivité & Réseau</h2>
+    <ul>
+      <li>Connexion sécurisée via <strong>VPN Tailscale</strong></li>
+      <li>Upload de ROMs via <a href="https://dizzyy.tech/pages/upload.html" target="_blank">SFTP sécurisé</a></li>
+      <li>Envoi automatique des données de sessions vers un <strong>serveur VPS</strong></li>
+    </ul>
+
+    <h2>📊 Monitoring des sessions de jeu</h2>
+    <ul>
+      <li>Détection du lancement/arrêt d’un jeu</li>
+      <li>Envoi automatique d’un <strong>fichier JSON</strong> vers le VPS + envoi par mail avec <strong>serveur mail</strong> du VPS</li>
+      <li>Notification par e-mail avec contenu de session</li>
+    </ul>
+
+    <h2>🚧 Fonctionnalités</h2>
+    <table>
+      <tr><th>Fonctionnalité</th><th>Statut</th></tr>
+      <tr><td>Joysticks HID (Arduino)</td><td>✅ Fonctionnel</td></tr>
+      <tr><td>Envoi de ROMs</td><td>✅ Actif via SFTP</td></tr>
+      <tr><td>Envoi JSON sessions</td><td>✅ Fonctionnel</td></tr>
+    </table>
+
+    <h2>🔗 Liens utiles</h2>
+    <ul>
+      <li><a href="https://dizzyy.tech/upload.html" target="_blank">Uploader une ROM</a></li>
+      <li><a href="https://drive.google.com/drive/folders/16fyruMwwBCuXFfMWPKgOCJh78o1CETLF?usp=drive_link" target="_blank">Drive du projet (photos, vidéos, scripts)</a></li>
+    </ul>
+  </section>
+  <footer>
+    <p>© 2025 dizzyy.tech | <a href="https://github.com/nunof083" target="_blank">GitHub</a></p>
+  </footer>
+</body>
+</html>
